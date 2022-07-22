@@ -1,7 +1,7 @@
 
 public class ContaCorrente extends ContaBancaria {
 	private double taxasMensais;
-	private int mes =0;
+	
 
 	public ContaCorrente(Pessoa titular, Banco banco, int nroConta, double saldo, String senha, double taxasMensais) {
 		super(titular, banco, nroConta, saldo, senha);
@@ -42,7 +42,7 @@ public class ContaCorrente extends ContaBancaria {
 	}
 	
 	public void novoMes() {
-		this.mes++;
+		
 		desconto();
 	}
 	

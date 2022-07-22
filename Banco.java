@@ -75,6 +75,12 @@ public class Banco {
 
 
 	public void infoBanco() {
+		System.out.println(
+				
+				"\nBanco: "+this.nome
+				+"\nCNPJ: "+this.cnpj
+				+"\nN° : "+this.nroBanco
+				+"\n");
 		
 	}
 	

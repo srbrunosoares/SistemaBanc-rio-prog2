@@ -8,13 +8,7 @@ public class Pessoa {
 	
 	
 	private ArrayList <ContaBancaria>contaBancaria = new ArrayList<>();
-	
-	
-	
-	
-	
-	
-	
+		
 	public Pessoa(String nome, String sobrenome, int idade, int cpf) {
 		super();
 		this.nome = nome;
