@@ -42,10 +42,11 @@ public class Program {
 									 
 									
 									banco = new Banco("Santander", "51656165165/0001", 33);
-									
-									
-									
 									listaDeBancos.add(banco);
+									
+									
+									
+									
 									
 									System.out.println("Escolha o tipo de conta: ");
 									System.out.println("1 - Conta Corrente");
@@ -54,6 +55,7 @@ public class Program {
 									
 									int opcaoTipo=sc.nextInt(); sc.nextLine();
 									
+									//ESTRUTURA PARA PROCURAR BANCO NA LISTA
 									int numeracaoConta=5;
 											System.out.println("Escolha uma senha para a conta: ");
 											String senha =sc.nextLine();
@@ -88,7 +90,7 @@ public class Program {
 									
 									System.out.println("CONTA CADASTRADA!!!");
 									System.out.println("");
-									listaDePessoas.get(0).info();
+									pessoa.info();
 									
 									break;
 								}
@@ -102,12 +104,21 @@ public class Program {
 										System.out.println("---Login---");
 										System.out.println("Informe o CPF: ");
 										int cpf=sc.nextInt();
-										sc.nextLine();
 										
+										//ESTRUTURA PARA PROCURAR CPF NA LISTA
+										sc.nextLine();
+										int index;
+										for( index=0; index<listaDePessoas.size();index++) {
+											if(listaDePessoas.get(index).cpf==cpf) {
+												System.out.println("CPF Encontradoo"+index);
+												break;
+											}
 											
-											if (listaDePessoas.get(0).cpf==cpf) {
+										}
+											
+											if (listaDePessoas.get(index).cpf==cpf) {
 												System.out.println("Escolha a Conta: ");
-												listaDePessoas.get(0).infoContasProtected();
+												listaDePessoas.get(index).infoContasProtected();
 												int escolhaConta=sc.nextInt();
 												sc.nextLine();
 												escolhaConta--;
@@ -118,12 +129,12 @@ public class Program {
 												sc.nextLine();
 												
 												@SuppressWarnings("unused")
-												boolean verificacao=pessoa.getCc(0).verificaSenha(senha);			
+												boolean verificacao=pessoa.getCc(index).verificaSenha(senha);			
 												
 														if(verificacao=true) {
 															System.out.println("Informações da conta: ");
 															
-															if(listaDePessoas.get(0).getCc(0).getClass().equals(ContaCorrente.class)) {
+															if(listaDePessoas.get(index).getCc(0).getClass().equals(ContaCorrente.class)) {
 																ContaBancaria conta=listaDePessoas.get(0).getCc(0);
 																listaDePessoas.get(0).infoCc(conta);
 																System.out.println("");										
