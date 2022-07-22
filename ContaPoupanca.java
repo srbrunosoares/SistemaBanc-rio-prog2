@@ -8,11 +8,10 @@ public class ContaPoupanca extends ContaBancaria {
 	
 	
 	
-	public ContaPoupanca(Pessoa titular, Banco banco, int nroConta, double saldo, String senha, double rendimento,
-			int saquesMensais) {
+	public ContaPoupanca(Pessoa titular, Banco banco, int nroConta, double saldo, String senha, double rendimento) {
 		super(titular, banco, nroConta, saldo, senha);
 		this.rendimento = rendimento;
-		this.saquesMensais = saquesMensais;
+		
 	}
 	
 
@@ -48,6 +47,14 @@ public class ContaPoupanca extends ContaBancaria {
 
 
 	public void info() {
+		System.out.println(
+				"Conta Corrente"
+			+	"\nTitular: "+getTitular().nome
+			+	"\nBanco "   +getBanco()
+			+   "\nN° Conta: "+getNroConta()
+			+	"\nSaldo: R$ "+getSaldo()
+			//não exibe senha
+			+ "\nRendimento: "+getRendimento());
 		
 	}
 	

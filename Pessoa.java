@@ -103,6 +103,15 @@ public class Pessoa {
 		return this.contaBancaria.get(index);
 	}
 	
+	public void infoCc(ContaBancaria conta) {
+		ContaCorrente cc = (ContaCorrente) conta;
+		cc.info();
+	}
+	public void infoCp(ContaBancaria conta) {
+		ContaPoupanca cp = (ContaPoupanca) conta;
+		cp.info();
+	}
+	
 	
 	
 	
